@@ -1,1 +1,1 @@
-console.log("ola k ase horus");
+console.log("ola k ase");
