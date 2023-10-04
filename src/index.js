@@ -1,4 +1,8 @@
+import {homeRender} from "./home.js";
+
 let mainDiv = document.querySelector("#content");
+//console.log(home)
+console.log("ola k ase")
 
 
 function headerMaker() {
@@ -9,25 +13,39 @@ function headerMaker() {
     title.classList.add("title");
     title.textContent = "La Parrilla";
     header.appendChild(title);
+    let tabContainer = document.createElement("div");
+    tabContainer.classList.add("tab-container");
+    header.appendChild(tabContainer);
     let home = document.createElement("div")
     home.classList.add("home")
     home.textContent = "HOME"
-    header.appendChild(home)
+    home.addEventListener("click", homeRender)
+    tabContainer.appendChild(home)
     let menu = document.createElement("div")
     menu.classList.add("menu")
     menu.textContent = "MENU"
-    header.appendChild(menu)
+    tabContainer.appendChild(menu)
     let contact = document.createElement("div")
     contact.classList.add("contact")
     contact.textContent = "CONTACT"
-    header.appendChild(contact)
+    tabContainer.appendChild(contact)
+
+    return {
+        home,
+        menu,
+        contact
+    }
 
 }
+
+console.log(headerMaker())
 
 function mainMaker(){
     let main = document.createElement("main");
     main.classList.add("main");
     mainDiv.appendChild(main);
+
+    return {main}
 }
 
 function footerMaker(){
@@ -41,3 +59,7 @@ function footerMaker(){
 headerMaker()
 mainMaker()
 footerMaker()
+
+console.log(mainMaker())
+
+export {mainMaker}
