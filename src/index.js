@@ -3,10 +3,6 @@ import {menuRender} from "./menu.js";
 import {contactRender} from "./contact.js";
 
 
-//console.log(home)
-console.log("ola k ase")
-
-
 function headerMaker() {
     let header = document.createElement("header");
     header.classList.add("header");
@@ -17,17 +13,19 @@ function headerMaker() {
     header.appendChild(title);
 
     header.appendChild(navMaker());
-    console.log(navMaker())
+
 
     return header
 }
 
-console.log(headerMaker())
-
 function navMaker(){
+
+    let main = mainMaker();
 
     let nav = document.createElement("nav");
     nav.classList.add("nav");
+
+    window.addEventListener("load", homeRender)
 
     let home = document.createElement("div")
     home.classList.add("home")
@@ -47,20 +45,20 @@ function navMaker(){
     contact.addEventListener("click", contactRender)
     nav.appendChild(contact)
 
-
     return nav
 }
 
 
 
+
 function mainMaker(){
+
     let main = document.createElement("main");
     main.classList.add("main");
 
     return main
 }
 
-console.log(mainMaker())
 
 function footerMaker(){
     let footer = document.createElement("footer");
@@ -70,11 +68,9 @@ function footerMaker(){
     return footer
 }
 
-console.log(footerMaker())
 
 function webRender() {
     let mainDiv = document.querySelector("#content");
-console.log(mainDiv)
     mainDiv.appendChild(headerMaker());
     mainDiv.appendChild(mainMaker());
     mainDiv.appendChild(footerMaker());

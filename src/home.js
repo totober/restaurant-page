@@ -12,7 +12,6 @@ function homeMaker(){
     para.classList.add("para");
     para.textContent = "La mejor carne del mundo";
 
-
     mainHome.appendChild(logo);
     mainHome.appendChild(para);
 
@@ -22,7 +21,10 @@ function homeMaker(){
 
 function homeRender() {
     let main = document.querySelector(".main");
-    main.appendChild(homeMaker());
+        main.innerHTML = "";
+        main.appendChild(homeMaker());
+    
+    
 }
 
 

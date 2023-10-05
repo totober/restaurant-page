@@ -53,5 +53,6 @@ function createCard(item, beerName, ingredients ){
 
 function menuRender(){
     let main = document.querySelector(".main");
+    main.innerHTML = "";
     main.appendChild(menuMaker());
 }
