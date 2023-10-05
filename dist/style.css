@@ -20,7 +20,7 @@
     grid-area: header;
 }
 
-.tab-container {
+.nav {
     width: 300px;
     display: flex;
     justify-content: space-evenly;
