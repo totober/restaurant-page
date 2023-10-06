@@ -7,18 +7,19 @@
     --color-dark: rgba(32, 31, 31, 0.8);
     --dark-gray: #121212; 
     --light-gray: #282828;
+    --lighter-gray: #393939;
     --color-white: rgb(243, 237, 237);
 }
 
 body {
     background-color: var(--dark-gray);
-    color: var(--color-white)
+    color: var(--color-white);
 }
 
 #content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 180px 3fr 80px;
+    grid-template-rows: 180px 3fr 60px;
     grid-template-areas: 
         "header header header"
         "main main main"
@@ -49,16 +50,8 @@ body {
     height: 50px;
     border-radius: 50%;
     bottom: 73px;
-    left: 540px;
+    left: 530px;
 } 
-
-.principal-img {
-    background-image: url(../img/how-to-brew-beer.jpg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 600px;
-    width: 900px;
-}
 
 .nav {
     width: 300px;
@@ -69,6 +62,7 @@ body {
 
 .menu, .home, .contact {
     transition: ease-in-out 0.3s;
+    cursor: pointer;
 }
 
 .menu:hover, .home:hover, .contact:hover {
@@ -92,10 +86,32 @@ h1 {
     padding-top: 60px;
 }
 
+/* MAIN -- HOME */
+
+.principal-img {
+    background-image: url(../img/how-to-brew-beer.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+    width: 900px;
+}
+
+.para {
+    text-align: center;
+    font-size: 23px;
+    padding-bottom: 30px;
+}
+
+.para::before {
+    content: "🤍 "; 
+}
+
+/* MAIN -- MENU */
+
 .main-menu {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 8px;
+    gap: 10px;
 }
 
 .card{
@@ -107,6 +123,14 @@ h1 {
     grid-template-areas: 
         "img title"
         "img para";
+    transition: ease-in-out 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    background-color: var(--lighter-gray);
+    border: 2px solid var(--color-white);
 }
 
 .dish-name {
@@ -137,37 +161,36 @@ h1 {
 }
 
 .card-2 .dish-img {
-    background-image: url(../img/cerveza-negra-espuma-pinta_53876-94399.avif);
+    background-image: url(../img/BELGIAN\ PALE\ ALE.jpg);
 }
 
 .card-3 .dish-img {
-    background-image: url(../img/IPA.jpg);
+    background-image: url(../img/cerveza-negra-espuma-pinta_53876-94399.avif);
 }
 
 .card-4 .dish-img {
-    background-image: url(../img/IPA.jpg);
+    background-image: url(../img/kolsh.webp);
 }
 
 .card-5 .dish-img {
-    background-image: url(../img/IPA.jpg);
+    background-image: url(../img/irish\ red\ ale.jpeg);
 }
 
 .card-6 .dish-img {
-    background-image: url(../img/IPA.jpg);
-}
-.para {
-    text-align: center;
-    font-size: 23px;
-    padding-bottom: 30px;
+    background-image: url(../img/witbier.jpg);
 }
 
-.para::before {
-    content: "🤍 "; 
+/* MAIN -- CONTACT */
+
+.main-contact {
+    min-height: 290px;
 }
+
 
 /* FOOTER  */
 
 .footer {
     grid-area: footer;
+    background-color: var(--dark-gray);
 }
 

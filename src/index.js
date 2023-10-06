@@ -9,7 +9,7 @@ function headerMaker() {
 
     let title = document.createElement("h1")
     title.classList.add("title");
-    title.textContent = "Beer Bar";
+    title.textContent = "BEER BAR";
     header.appendChild(title);
     let logo = document.createElement("p")
     logo.classList.add("logo");
