@@ -4,8 +4,8 @@ import {elementMaker} from "./index.js"
 
 
 function contactMaker(){
-    let mainContact = document.createElement("div");
-    mainContact.classList.add("main-contact");
+    
+    let mainContact = elementMaker("div", "main-contact", "")
 
     let title = elementMaker("h3", "", "About Us")
     let para = elementMaker("p", "contact-para", 
