@@ -14,7 +14,7 @@ function headerMaker() {
     let logo = document.createElement("p")
     logo.classList.add("logo");
 
-    header.appendChild(logo) 
+    title.appendChild(logo) 
     header.appendChild(navMaker());
 
 
