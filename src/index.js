@@ -2,73 +2,78 @@ import {homeRender} from "./home.js";
 import {menuRender} from "./menu.js";
 import {contactRender} from "./contact.js";
 
+export{elementMaker}
+
+
+window.addEventListener("load", homeRender)
+
 
 function headerMaker() {
-    let header = document.createElement("header");
-    header.classList.add("header");
 
-    let title = document.createElement("h1")
-    title.classList.add("title");
-    title.textContent = "BEER BAR";
-    header.appendChild(title);
-    let logo = document.createElement("p")
-    logo.classList.add("logo");
+    let header = elementMaker("header", "header", "")
 
-    title.appendChild(logo) 
+    let title = elementMaker("h1", "title", "BEER BAR")
+
+    let logo = elementMaker("p", "logo", "")
+
+    header.appendChild(title); 
+    title.appendChild(logo)
     header.appendChild(navMaker());
-
 
     return header
 }
 
+
+
 function navMaker(){
 
-    let main = mainMaker();
+    let nav = elementMaker("nav", "nav", "")
 
-    let nav = document.createElement("nav");
-    nav.classList.add("nav");
-
-    window.addEventListener("load", homeRender)
-
-    let home = document.createElement("div")
-    home.classList.add("home")
-    home.textContent = "HOME"
+    let home = elementMaker("div", "home", "HOME")
     home.addEventListener("click", homeRender)
-    nav.appendChild(home)
 
-    let menu = document.createElement("div")
-    menu.classList.add("menu")
-    menu.textContent = "MENU"
+    let menu = elementMaker("div", "menu", "MENU")
     menu.addEventListener("click", menuRender)
-    nav.appendChild(menu)
-    
-    let contact = document.createElement("div")
-    contact.classList.add("contact")
-    contact.textContent = "CONTACT"
+
+    let contact = elementMaker("div", "contact", "CONTACT")
     contact.addEventListener("click", contactRender)
+
+    nav.appendChild(home)
+    nav.appendChild(menu)
     nav.appendChild(contact)
 
     return nav
 }
 
 
-
-
 function mainMaker(){
 
-    let main = document.createElement("main");
-    main.classList.add("main");
+    let main = elementMaker("main", "main", "")
 
     return main
 }
 
 
 function footerMaker(){
-    let footer = document.createElement("footer");
-    footer.classList.add("footer");
-    footer.textContent = "totober© 2023";
+
+    let footer = elementMaker("footer", "footer", "totober© 2023")
 
     return footer
+}
+
+
+function elementMaker(elementWithQuotes, classWithQuotes, textWithQuotes) {
+  
+    let el = document.createElement(elementWithQuotes);
+
+    if(classWithQuotes !== "") {
+       el.classList.add(classWithQuotes); 
+    }
+    if(textWithQuotes !== "") {
+       el.textContent = textWithQuotes; 
+    }
+
+    return el
 }
 
 

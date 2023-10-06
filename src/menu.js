@@ -1,10 +1,11 @@
 export {menuRender}
 
+import {elementMaker} from "./index.js"
+
 
 function menuMaker() {
 
-        let mainMenu = document.createElement("div");
-        mainMenu.classList.add("main-menu");
+        let mainMenu = elementMaker("div", "main-menu", "");
 
         mainMenu.appendChild(createCard(1, "Indian Pale Ale", 
         "If you like bitter, floral, earthy, citrusy, piney, fruity, and bitter flavor notes, you’ll like an IPA."));
@@ -30,20 +31,15 @@ function menuMaker() {
 
 function createCard(item, beerName, ingredients ){
 
-    let card = document.createElement("section");
-    card.classList.add(`card-${item}`);
+    
+    let card = elementMaker("section", `card-${item}`, "");
     card.classList.add("card");
 
-    let dishImg = document.createElement("div");
-    dishImg.classList.add("dish-img");
+    let dishImg = elementMaker("div", "dish-img", "");
 
-    let dishName = document.createElement("h3");
-    dishName.classList.add("dish-name");
-    dishName.textContent = beerName;
+    let dishName = elementMaker("h3", "dish-name", `${beerName}`)
 
-    let dishPara = document.createElement("p");
-    dishPara.classList.add("dish-para");
-    dishPara.textContent = ingredients;
+    let dishPara = elementMaker("p", "dish-para", `${ingredients}`)
 
     card.appendChild(dishImg)
     card.appendChild(dishName)

@@ -181,12 +181,40 @@ h1 {
 
 /* MAIN -- CONTACT */
 
-.main-contact {
-    min-height: 290px;
+.contact-para {
+    margin-bottom: 80px;
 }
 
-h4:first-of-type::before {
-    content: url(../img/small-beer.png);
+h4 {
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: -10px;
+}
+
+h4::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-size: cover;  
+    position: absolute;  
+    left: -23px;
+    filter: invert(97%) sepia(1%) saturate(1072%) hue-rotate(324deg) brightness(101%) contrast(91%);
+}
+
+h4:first-of-type::before {   
+    background-image: url(../img/marker.svg); 
+    top: 2px;
+}
+
+h4:nth-of-type(2)::before {   
+    background-image: url(../img/phone-call.svg); 
+    top: 4px;
+}
+
+h4:last-of-type::before {   
+    background-image: url(../img/envelope.svg); 
+    top: 3px;
 }
 
 /* FOOTER  */
