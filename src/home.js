@@ -5,14 +5,14 @@ function homeMaker(){
     let mainHome = document.createElement("div");
     mainHome.classList.add("main-home");
 
-    let logo = document.createElement("div");
-    logo.classList.add("logo");
+    let img = document.createElement("div");
+    img.classList.add("principal-img");
 
     let para = document.createElement("p");
     para.classList.add("para");
-    para.textContent = "La mejor carne del mundo";
+    para.textContent = "We brew with love 🤍";
 
-    mainHome.appendChild(logo);
+    mainHome.appendChild(img);
     mainHome.appendChild(para);
 
     return mainHome

@@ -11,7 +11,10 @@ function headerMaker() {
     title.classList.add("title");
     title.textContent = "Beer Bar";
     header.appendChild(title);
+    let logo = document.createElement("p")
+    logo.classList.add("logo");
 
+    header.appendChild(logo) 
     header.appendChild(navMaker());
 
 

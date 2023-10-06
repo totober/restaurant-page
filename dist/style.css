@@ -1,13 +1,28 @@
+:root {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+    --color-dark: rgba(32, 31, 31, 0.8);
+    --dark-gray: #121212; 
+    --light-gray: #282828;
+    --color-white: rgb(243, 237, 237);
+}
+
+body {
+    background-color: var(--dark-gray);
+    color: var(--color-white)
+}
 
 #content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 3fr 120px;
+    grid-template-rows: 180px 3fr 80px;
     grid-template-areas: 
         "header header header"
         "main main main"
-        "footer footer footer";
+        "footer footer footer"; 
 }
 
 .header, .main, .footer {
@@ -16,24 +31,143 @@
     align-items: center;
 }
 
+/* HEADER  */
+
 .header {
     grid-area: header;
+    border-bottom: 2px solid var(--color-white);
+    background-color: var(--dark-gray);
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    background-image: url(../img/small-beer.png);
+    background-position: center;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 73px;
+    left: 540px;
+} 
+
+.principal-img {
+    background-image: url(../img/how-to-brew-beer.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 600px;
+    width: 900px;
 }
 
 .nav {
     width: 300px;
     display: flex;
     justify-content: space-evenly;
+    font-size: 18px;
+}
+
+.menu, .home, .contact {
+    transition: ease-in-out 0.3s;
+}
+
+.menu:hover, .home:hover, .contact:hover {
+    transform: scale(1.2);
+}
+
+ .menu:active, .home:active, .contact:active {
+    border-bottom: 1px solid var(--color-white);
 }
 
 h1 {
     text-align: center;
 }
 
+/* MAIN  */
+
 .main {
     grid-area: main;
+    background-color: var(--light-gray);
+    padding: 10px;
+    padding-top: 60px;
 }
+
+.main-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 8px;
+}
+
+.card{
+    padding: 10px;
+    border: 1px solid var(--color-white);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+        "img title"
+        "img para";
+}
+
+.dish-name {
+    grid-area: title;
+    padding: 20px;
+    text-align: center;
+}
+
+.dish-para {
+    grid-area: para;
+    padding: 20px;
+    align-self: start;
+}
+
+.dish-img {
+    grid-area: img;
+    width: 120px;
+    height: 220px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    align-self: center;
+}
+
+.card-1 .dish-img {
+    background-image: url(../img/IPA.jpg);
+}
+
+.card-2 .dish-img {
+    background-image: url(../img/cerveza-negra-espuma-pinta_53876-94399.avif);
+}
+
+.card-3 .dish-img {
+    background-image: url(../img/IPA.jpg);
+}
+
+.card-4 .dish-img {
+    background-image: url(../img/IPA.jpg);
+}
+
+.card-5 .dish-img {
+    background-image: url(../img/IPA.jpg);
+}
+
+.card-6 .dish-img {
+    background-image: url(../img/IPA.jpg);
+}
+.para {
+    text-align: center;
+    font-size: 23px;
+    padding-bottom: 30px;
+}
+
+.para::before {
+    content: "🤍 "; 
+}
+
+/* FOOTER  */
 
 .footer {
     grid-area: footer;
 }
+
